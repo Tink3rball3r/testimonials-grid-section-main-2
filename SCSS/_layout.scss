@@ -1,0 +1,129 @@
+body {
+	background-color: var(--clr-6);
+	width: 100%;
+	height: 100vh;
+}
+
+.testimony--1,
+.testimony--2,
+.testimony--4 {
+	color: var(--text-clr-light);
+}
+
+.testimony--3,
+.testimony--5 {
+	background-color: var(--testimony-3-5);
+	color: var(--text-clr-dark);
+}
+
+.testimony--1 {
+	background-color: var(--testimony-1);
+	background-image: url(/images/bg-pattern-quotation.svg);
+	background-repeat: no-repeat;
+	background-size: 21%;
+	background-position: 81% 0%;
+}
+
+.testimony--2 {
+	background-color: var(--testimony-2);
+}
+
+.testimony--4 {
+	background-color: var(--testimony-4);
+}
+
+.testimonials__user__photo {
+	border-radius: var(--img-round);
+	border: 0.2rem solid var(--clr-4-light);
+	width: 2.5rem;
+	margin-right: 0.5rem;
+}
+
+.border--dark {
+	border: 0.2rem solid var(--clr-1);
+}
+
+.grid__main {
+	display: grid;
+	grid-template-columns: repeat(
+		auto-fit,
+		[col-start] minmax(19rem, 1fr) [col-end]
+	);
+
+	grid-template-areas:
+		'daniel daniel jonathan kira'
+		'jeanette patrick patrick kira';
+	gap: 2rem;
+	max-width: 84rem;
+	margin: 5rem auto;
+
+	.testimony--1 {
+		grid-area: daniel;
+	}
+
+	.testimony--2 {
+		grid-area: jonathan;
+	}
+
+	.testimony--3 {
+		grid-area: jeanette;
+	}
+
+	.testimony--4 {
+		grid-area: patrick;
+	}
+
+	.testimony--5 {
+		grid-area: kira;
+	}
+}
+
+.testimonials__grid {
+	display: grid;
+	grid-template-columns: min-content 1fr;
+	grid-template-rows: min-content;
+	gap: 1.5rem;
+	padding: 1.5rem 2rem 1.4rem 2rem;
+	border-radius: var(--edge-round);
+	filter: drop-shadow(10px 10px 4px var(--clr-5));
+
+	.testimonials__user__info {
+		grid-column: 2 / -1;
+
+		.user__name {
+			font-weight: var(--fw-2);
+		}
+
+		.user__verification {
+			opacity: 0.5;
+			font-weight: var(--fw-1);
+		}
+	}
+
+	.testimony__lead {
+		grid-column: 1/ -1;
+		font-size: var(--lead-fs);
+		font-weight: var(--fw-2);
+		// margin: 1rem 0;
+	}
+
+	.lead--fix {
+		padding-right: 2rem; /* for some reason unkown to me the text wouldn't line up correctly and 
+        this had to be done to match the heading in the design. If it works! Am I right?*/
+	}
+
+	.testimony__paragraph {
+		grid-column: 1/ -1;
+		font-weight: var(--fw-1);
+		line-height: 1.3;
+		opacity: 0.5;
+	}
+}
+
+footer {
+	text-align: center;
+	width: 30rem;
+	padding: 1rem 2rem;
+	border: 0.5rem dotted var(--clr-1);
+	margin: 1rem auto 4rem auto;
+}

@@ -1,0 +1,238 @@
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 81.25%;
+  /*sets font-size to 13px*/
+  font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+body {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+a,
+a:hover,
+a:focus,
+a:visited,
+a:active {
+  color: var(--clr-1);
+}
+
+:root {
+  --clr-1: hsl(263, 55%, 52%);
+  --clr-2: hsl(217, 19%, 35%);
+  --clr-3: hsl(219, 29%, 14%);
+  --clr-4: hsl(0, 0%, 100%);
+  --clr-5: hsl(0, 0%, 81%);
+  --clr-6: hsl(210, 46%, 95%);
+  --clr-4-light: hsla(0, 0%, 100%, 0.5);
+  --clr-3-light: hsla(217, 19%, 35%, 0.5);
+  --testimony-1: var(--clr-1);
+  --testimony-2: var(--clr-2);
+  --testimony-3-5: var(--clr-4);
+  --testimony-4: var(--clr-3);
+  --img-border: var(--clr-6-light);
+  --img-border-dark: var(--clr-1);
+  --img-round: 50%;
+  --edge-round: 0.5rem;
+  --fw-1: 500;
+  --fw-2: 600;
+  --text-clr-light: var(--clr-4);
+  --text-clr-dark: var(--clr-2);
+  --lead-fs: 1.5rem;
+}
+
+body {
+  background-color: var(--clr-6);
+  width: 100%;
+  height: 100vh;
+}
+
+.testimony--1,
+.testimony--2,
+.testimony--4 {
+  color: var(--text-clr-light);
+}
+
+.testimony--3,
+.testimony--5 {
+  background-color: var(--testimony-3-5);
+  color: var(--text-clr-dark);
+}
+
+.testimony--1 {
+  background-color: var(--testimony-1);
+  background-image: url(/images/bg-pattern-quotation.svg);
+  background-repeat: no-repeat;
+  background-size: 21%;
+  background-position: 81% 0%;
+}
+
+.testimony--2 {
+  background-color: var(--testimony-2);
+}
+
+.testimony--4 {
+  background-color: var(--testimony-4);
+}
+
+.testimonials__user__photo {
+  border-radius: var(--img-round);
+  border: 0.2rem solid var(--clr-4-light);
+  width: 2.5rem;
+  margin-right: 0.5rem;
+}
+
+.border--dark {
+  border: 0.2rem solid var(--clr-1);
+}
+
+.grid__main {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: ([col-start] minmax(19rem, 1fr) [col-end])[auto-fit];
+      grid-template-columns: repeat(auto-fit, [col-start] minmax(19rem, 1fr) [col-end]);
+      grid-template-areas: 'daniel daniel jonathan kira' 'jeanette patrick patrick kira';
+  gap: 2rem;
+  max-width: 84rem;
+  margin: 5rem auto;
+}
+
+.grid__main .testimony--1 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: daniel;
+}
+
+.grid__main .testimony--2 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: jonathan;
+}
+
+.grid__main .testimony--3 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: jeanette;
+}
+
+.grid__main .testimony--4 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: patrick;
+}
+
+.grid__main .testimony--5 {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 4;
+  grid-area: kira;
+}
+
+.testimonials__grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: min-content 1fr;
+      grid-template-columns: -webkit-min-content 1fr;
+      grid-template-columns: min-content 1fr;
+  -ms-grid-rows: min-content;
+      grid-template-rows: -webkit-min-content;
+      grid-template-rows: min-content;
+  gap: 1.5rem;
+  padding: 1.5rem 2rem 1.4rem 2rem;
+  border-radius: var(--edge-round);
+  -webkit-filter: drop-shadow(10px 10px 4px var(--clr-5));
+          filter: drop-shadow(10px 10px 4px var(--clr-5));
+}
+
+.testimonials__grid .testimonials__user__info {
+  grid-column: 2 / -1;
+}
+
+.testimonials__grid .testimonials__user__info .user__name {
+  font-weight: var(--fw-2);
+}
+
+.testimonials__grid .testimonials__user__info .user__verification {
+  opacity: 0.5;
+  font-weight: var(--fw-1);
+}
+
+.testimonials__grid .testimony__lead {
+  grid-column: 1/ -1;
+  font-size: var(--lead-fs);
+  font-weight: var(--fw-2);
+}
+
+.testimonials__grid .lead--fix {
+  padding-right: 2rem;
+  /* for some reason unkown to me the text wouldn't line up correctly and 
+        this had to be done to match the heading in the design. If it works! Am I right?*/
+}
+
+.testimonials__grid .testimony__paragraph {
+  grid-column: 1/ -1;
+  font-weight: var(--fw-1);
+  line-height: 1.3;
+  opacity: 0.5;
+}
+
+footer {
+  text-align: center;
+  width: 30rem;
+  padding: 1rem 2rem;
+  border: 0.5rem dotted var(--clr-1);
+  margin: 1rem auto 4rem auto;
+}
+
+@media (max-width: 1024px) {
+  .grid__main {
+    width: 70rem;
+    margin: 2rem auto;
+    -ms-grid-columns: (minmax(22rem, 1fr) [col-end])[[col-start]];
+        grid-template-columns: repeat([col-start] minmax(22rem, 1fr) [col-end]);
+    -ms-grid-rows: (270px)[2];
+        grid-template-rows: repeat(2, 270px);
+        grid-template-areas: 'kira kira kira' 'daniel daniel jonathan' 'jeanette patrick patrick';
+    margin: 5rem auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid__main {
+        grid-template-areas: 'daniel daniel' 'jonathan jeanette' 'patrick patrick' 'kira kira ';
+    width: 48.5rem;
+  }
+  footer {
+    margin: 2rem auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid__main {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: min-content;
+        grid-template-rows: -webkit-min-content;
+        grid-template-rows: min-content;
+        grid-template-areas: 'daniel' 'jonathan' 'jeanette' 'patrick' 'kira';
+    width: 28.5rem;
+  }
+  footer {
+    width: 20rem;
+    font-size: 0.75rem;
+  }
+}
+/*# sourceMappingURL=styles.css.map */

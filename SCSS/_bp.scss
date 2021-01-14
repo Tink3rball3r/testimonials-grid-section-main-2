@@ -1,0 +1,53 @@
+@include small-screens-laptops {
+	.grid__main {
+		width: 70rem;
+		margin: 2rem auto;
+		grid-template-columns: repeat(
+			// auto-fit,
+			[col-start] minmax(22rem, 1fr) [col-end]
+		);
+		grid-template-rows: repeat(2, 270px);
+		grid-template-areas:
+			'kira kira kira'
+			'daniel daniel jonathan'
+			'jeanette patrick patrick';
+
+		margin: 5rem auto;
+	}
+}
+
+@include ipads-tablets {
+	.grid__main {
+		grid-template-areas:
+			'daniel daniel'
+			'jonathan jeanette'
+			'patrick patrick'
+			'kira kira ';
+
+		width: 48.5rem;
+	}
+
+	footer {
+		margin: 2rem auto;
+	}
+}
+
+@include mobile-devices {
+	.grid__main {
+		grid-template-columns: 1fr;
+		grid-template-rows: min-content;
+		grid-template-areas:
+			'daniel'
+			'jonathan'
+			'jeanette'
+			'patrick'
+			'kira';
+
+		width: 28.5rem;
+	}
+
+	footer {
+		width: 20rem;
+		font-size: 0.75rem;
+	}
+}

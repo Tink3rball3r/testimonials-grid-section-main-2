@@ -1,0 +1,26 @@
+:root {
+	--clr-1: hsl(263, 55%, 52%);
+	--clr-2: hsl(217, 19%, 35%);
+	--clr-3: hsl(219, 29%, 14%);
+	--clr-4: hsl(0, 0%, 100%);
+	--clr-5: hsl(0, 0%, 81%);
+	--clr-6: hsl(210, 46%, 95%);
+	--clr-4-light: hsla(0, 0%, 100%, 0.5);
+	--clr-3-light: hsla(217, 19%, 35%, 0.5);
+
+	--testimony-1: var(--clr-1);
+	--testimony-2: var(--clr-2);
+	--testimony-3-5: var(--clr-4);
+	--testimony-4: var(--clr-3);
+
+	--img-border: var(--clr-6-light);
+	--img-border-dark: var(--clr-1);
+	--img-round: 50%;
+	--edge-round: 0.5rem;
+
+	--fw-1: 500;
+	--fw-2: 600;
+	--text-clr-light: var(--clr-4);
+	--text-clr-dark: var(--clr-2);
+	--lead-fs: 1.5rem;
+}
